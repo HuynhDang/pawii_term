@@ -44,9 +44,23 @@
       "penalty_points": 20
     }
   },
-  "evasion_rules": [
-    "b.á.n", "b án", "b-á-n", "g.i.á", "g i á", "g-i-á", "trjệu", "tr.", "k."
-  ],
+  "evasion_rules": {
+  "chars_to_remove": "[.\\-_* @#$!%^&()]", 
+  "homoglyphs": {
+    "0": "o",
+    "1": "i",
+    "3": "e",
+    "4": "a",
+    "5": "s",
+    "7": "t",
+    "8": "b"
+  },
+  "patterns": [
+    "b.á.n", "b án", "b-á-n", "b_á_n", "b á n", "b*á*n", 
+    "g.i.á", "g i á", "g-i-á", "g_i_á",
+    "i.b", "i b", "i_b", "trjệu", "tr.", "k."
+  ]
+}
   "whitelist": [
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
     "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí"
