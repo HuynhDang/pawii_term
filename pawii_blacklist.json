@@ -1,0 +1,56 @@
+{
+  "version": "1.1.0",
+  "last_updated": "2026-05-23",
+  "config": {
+    "normalization": true,
+    "bypass_regex": "[.\\-_* ]"
+  },
+  "categories": {
+    "trading_illegal": {
+      "level": "P0",
+      "label": "Kinh doanh trái phép",
+      "keywords": [
+        "bán chó", "bán mèo", "bán pet", "mua chó", "mua mèo", "giá bao nhiêu", 
+        "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
+        "thanh lý", "xả hàng", "giá công khai", "full phụ kiện", "freeship", 
+        "ship cod", "bao tiền", "triệu", "nghìn", "k vnđ", "vnd", "mấy đồng",
+        "liên hệ sđt", "zalo", "09", "03", "08", "bỏ sỉ", "giá rẻ nhất", "phối giống"
+      ],
+      "evasion_patterns": ["b.á.n", "b án", "b-á-n", "g.i.á", "g i á", "trjệu", "tr", "k"]
+    },
+    "violence_cruelty": {
+      "level": "P0",
+      "label": "Ngược đãi & Bạo lực",
+      "keywords": [
+        "thịt chó", "thịt mèo", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", 
+        "hành hạ", "tra tấn", "kích điện", "bỏ đói", "vứt bỏ", "xẻ thịt", 
+        "nhúng nước sôi", "chặt chân", "treo cổ", "thuốc chuột", "bả chó", 
+        "đánh bả", "xiên", "chọc tiết"
+      ]
+    },
+    "toxic_abusive": {
+      "level": "P1",
+      "label": "Ngôn từ thô tục",
+      "keywords": [
+        "đm", "đmm", "dm", "dmm", "vcl", "vkl", "clm", "cđm", "đéo", "đé0", 
+        "ngu", "óc chó", "súc vật", "đồ con lợn", "mất dạy", "khốn nạn", 
+        "tổ sư", "đĩ", "điếm", "tào lao", "xàm", "nhảm nhí", "câm mồm", 
+        "vô học", "lừa đảo", "scam", "thằng này", "con này"
+      ],
+      "slang_variants": ["đ.m", "d.m", "v.c.l", "v.k.l", "d m m", "n.g.u"]
+    },
+    "medical_misinfo": {
+      "level": "P2",
+      "label": "Y tế sai lệch",
+      "keywords": [
+        "thuốc nam", "chữa tại nhà", "không cần bác sĩ", "mẹo dân gian", 
+        "tự mổ", "kháng sinh người", "thuốc lậu", "không cần tiêm", 
+        "chữa parvo tại nhà", "thuốc không nhãn", "đắp lá"
+      ]
+    }
+  },
+  "whitelist": [
+    "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
+    "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí"
+  ]
+}
