@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "updated_at": "2026-05-24T00:00:00Z",
   "config": {
     "case_sensitive": false,
@@ -26,7 +26,9 @@
         "bán chó", "bán mèo", "bán pet", "mua chó", "mua mèo", "giá bao nhiêu", 
         "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
         "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
-        "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem"
+        "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem",
+        "k", "củ", "lít", "m", "khoai", "cá", "sdt", "fone", "p_h_o_n_e", "za-lo", "zeplao",
+        "zep-lao"
       ],
       "penalty_points": 15
     },
