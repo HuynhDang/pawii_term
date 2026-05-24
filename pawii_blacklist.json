@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_at": "2026-05-24T00:00:00Z",
   "config": {
     "case_sensitive": false,
@@ -26,7 +26,7 @@
         "bán chó", "bán mèo", "bán pet", "mua chó", "mua mèo", "giá bao nhiêu", 
         "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
         "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
-        "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ"
+        "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem"
       ],
       "penalty_points": 15
     },
@@ -62,11 +62,16 @@
   "patterns": [
     "b.á.n", "b án", "b-á-n", "b_á_n", "b á n", "b*á*n", 
     "g.i.á", "g i á", "g-i-á", "g_i_á",
-    "i.b", "i b", "i_b", "trjệu", "tr.", "k."
+    "i.b", "i b", "i_b", "trjệu", "tr.", "k.", "ph.ố.i",
+    "ib", "inbox", "ibx", "jb", 
+    "vcl", "vkl", "vch", "vờ cờ lờ",
+    "ck", "chuyenkhoan", "c.k",
+    "củ", "lít", "triệu", "trjieu"
   ]
 },
   "whitelist": [
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
-    "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí"
+    "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí",
+    "transfer"
   ]
 }
