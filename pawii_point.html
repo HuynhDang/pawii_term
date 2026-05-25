@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hệ Thống Điểm Tín Nhiệm & Hình Phạt</title>
+    <style>
+        :root {
+            --pawii-navy: #003E6A;
+            --pawii-mint: #11CAA0;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            
+            /* Thang màu trạng thái vi phạm */
+            --color-p0: #EF4444;      /* Đỏ - Vi phạm nặng */
+            --color-p0-trade: #F97316;/* Cam - Thương mại */
+            --color-p2: #F59E0B;      /* Vàng - Y tế sai lệch */
+            --color-p1: #3B82F6;      /* Xanh dương - Toxic nhẹ */
+            --color-safe: #10B981;    /* Xanh lá - Uy tín */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #F1F5F9;
+            margin: 0;
+            padding: 12px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 2px dashed var(--border-color);
+        }
+
+        h1 {
+            color: var(--pawii-navy);
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.4;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        h2 {
+            color: var(--pawii-navy);
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 28px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background-color: var(--pawii-mint);
+            margin-right: 8px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ĐỊNH DẠNG BẢNG RESPONSIVE TRÊN MOBILE */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            min-width: 500px; /* Đảm bảo bảng không bị bóp nghẹt trên màn hình quá nhỏ */
+        }
+
+        th {
+            background-color: var(--bg-light);
+            color: var(--pawii-navy);
+            font-weight: 700;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* BADGES TRẠNG THÁI */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .badge-p0 { background-color: var(--color-p0); }
+        .badge-trade { background-color: var(--color-p0-trade); }
+        .badge-p2 { background-color: var(--color-p2); }
+        .badge-p1 { background-color: var(--color-p1); }
+        .badge-safe { background-color: var(--color-safe); }
+
+        .score-minus {
+            font-weight: 700;
+            color: var(--color-p0);
+            white-space: nowrap;
+        }
+
+        /* THANG ĐIỂM CHI TIẾT DẠNG THẺ CARD */
+        .tier-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+            background-color: #ffffff;
+            border-left: 4px solid var(--border-color);
+        }
+
+        .tier-card.safe { border-left-color: var(--color-safe); }
+        .tier-card.warning { border-left-color: var(--color-p2); }
+        .tier-card.restrict { border-left-color: var(--color-p0-trade); }
+        .tier-card.banned { border-left-color: var(--color-p0); }
+
+        .tier-title {
+            font-weight: 700;
+            font-size: 14.5px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tier-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0 0 16px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 13.5px;
+        }
+
+        li strong {
+            color: var(--pawii-navy);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>Hệ Thống Điểm Tín Nhiệm & Biện Pháp Xử Lý</h1>
+    </div>
+
+    <p>Mỗi tài khoản người dùng khi tham gia hệ thống sẽ được cấp mặc định <strong>100 điểm Tín nhiệm (Credit Points)</strong>. Điểm số này đại diện cho mức độ uy tín và đóng góp lành mạnh của bạn đối với cộng đồng. Các hành vi đăng tải nội dung vi phạm Tiêu chuẩn cộng đồng sẽ bị trừ điểm trực tiếp dựa trên mức độ nghiêm trọng.</p>
+
+    <h2>1. Danh mục trừ điểm theo hành vi vi phạm</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Nhóm</th>
+                    <th>Hành Vi Vi Phạm</th>
+                    <th>Xử Lý Tức Thời</th>
+                    <th>Mức Phạt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-p0">P0_CRITICAL</span></td>
+                    <td><strong>Ngược đãi động vật nghiêm trọng, lừa đảo tài chính cứu trợ, tấn công phá hoại hệ thống.</strong></td>
+                    <td>Chặn quyền truy cập, ẩn toàn bộ nội dung ngay lập tức.</td>
+                    <td><span class="score-minus">-100 Điểm</span></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-trade">P0_TRADING</span></td>
+                    <td><strong>Rao bán, định giá, phối giống thương mại động vật hoặc lách luật để kinh doanh.</strong></td>
+                    <td>Chặn đăng tải bài viết, gửi cảnh báo vi phạm thương mại.</td>
+                    <td><span class="score-minus">-30 Điểm</span></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-p2">P2_MEDICAL</span></td>
+                    <td><strong>Tuyên truyền mẹo chữa bệnh sai khoa học, gây nguy hiểm cho tính mạng vật nuôi.</strong></td>
+                    <td>Tạm ẩn nội dung, gửi cảnh báo yêu cầu đính chính thông tin.</td>
+                    <td><span class="score-minus">-25 Điểm</span></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-p1">P1_TOXIC</span></td>
+                    <td><strong>Sử dụng ngôn từ thô tục, công kích cá nhân, gây mất đoàn kết cộng đồng.</strong></td>
+                    <td>Hệ thống tự động che từ ngữ vi phạm bằng ký hiệu <code>🐾</code>.</td>
+                    <td><span class="score-minus">-15 Điểm</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>2. Thang điểm tín nhiệm và Hình phạt giới hạn quyền</h2>
+    <p>Dựa trên số điểm tín nhiệm còn lại trong tài khoản, hệ thống sẽ tự động áp đặt các bộ lọc và hạn chế quyền hạn hoạt động như sau:</p>
+
+    <div class="tier-card safe">
+        <div class="tier-title" style="color: var(--color-safe);">
+            <span>Thành viên Uy tín (Level Green)</span>
+            <span>80 – 100 Điểm</span>
+        </div>
+        <p class="tier-desc">Tài khoản hoạt động hoàn toàn bình thường. Mọi bài viết và bình luận được hệ thống ưu tiên duyệt thẳng lên bảng tin (Feed) mà không cần qua hàng chờ.</p>
+    </div>
+
+    <div class="tier-card warning">
+        <div class="tier-title" style="color: var(--color-p2);">
+            <span>Tài khoản Cảnh cáo (Level Yellow)</span>
+            <span>50 – 79 Điểm</span>
+        </div>
+        <p class="tier-desc">Toàn bộ bài viết đăng mới (Post) bắt buộc phải chuyển vào <strong>Hàng chờ duyệt thủ công (Pending Queue)</strong> từ 10 đến 30 phút, được kiểm duyệt viên phê duyệt mới được hiển thị công khai. Quyền bình luận vẫn được giữ nguyên nhưng chịu sự giám sát chặt chẽ của Cloud AI.</p>
+    </div>
+
+    <div class="tier-card restrict">
+        <div class="tier-title" style="color: var(--color-p0-trade);">
+            <span>Tài khoản Bị Hạn chế (Level Orange)</span>
+            <span>1 – 49 Điểm</span>
+        </div>
+        <p class="tier-desc">Tài khoản bị <strong>tước bỏ hoàn toàn quyền Đăng bài và Bình luận trong vòng 07 ngày liên tiếp</strong>. Tài khoản chỉ được cấp quyền đọc nội dung (Read-only) và không thể tương tác.</p>
+    </div>
+
+    <div class="tier-card banned">
+        <div class="tier-title" style="color: var(--color-p0);">
+            <span>Đóng băng Tài khoản (Level Red)</span>
+            <span>0 Điểm</span>
+        </div>
+        <p class="tier-desc"><strong>Khóa tài khoản vĩnh viễn (Banned)</strong>. Đồng thời, hệ thống tự động đưa mã định danh thiết bị (Device ID), địa chỉ IP và Số điện thoại vào danh sách đen ngăn chặn tạo tài khoản mới.</p>
+    </div>
+
+    <h2>3. Cơ chế phục hồi điểm tín nhiệm</h2>
+    <p>Chúng tôi luôn khuyến khích người dùng sửa sai và đóng góp tích cực để khôi phục lại điểm số uy tín thông qua các hoạt động sau:</p>
+    <ul>
+        <li><strong>Đăng nhập tích cực:</strong> Mỗi ngày đăng nhập vào ứng dụng và không phát sinh bất kỳ hành vi vi phạm chính sách nào: <span style="color: var(--color-safe); font-weight: 700;">+1 điểm/ngày</span>.</li>
+        <li><strong>Đóng góp nội dung chất lượng:</strong> Mỗi bài viết chia sẻ kiến thức chăm sóc thú cưng hữu ích được Ban quản trị phê duyệt và gắn nhãn "Nội dung chất lượng": <span style="color: var(--color-safe); font-weight: 700;">+5 điểm/bài viết</span>.</li>
+    </ul>
+    <p><em>*Lưu ý: Điểm tín nhiệm tích lũy tối đa của mỗi tài khoản không vượt quá mốc 100 điểm.</em></p>
+
+</div>
+
+</body>
+</html>
