@@ -100,6 +100,99 @@
             color: #94A3B8;
             padding-bottom: 40px;
         }
+
+        .moderation-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .flow-step {
+            position: relative;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+            border-color: var(--primary-color);
+        }
+
+        /* Mũi tên kết nối giữa các bước */
+        .flow-step:not(:last-child)::after {
+            content: "↓";
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .step-details {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--muted-text);
+            font-size: 14px;
+        }
+
+        .step-details li {
+            margin-bottom: 8px;
+        }
+
+        .step-details li strong {
+            color: var(--text-color);
+        }
+
+        .final-status {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--success-color);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
     </style>
 </head>
 <body>
@@ -145,12 +238,7 @@
     <h2>5. Trách nhiệm người dùng</h2>
     <p>Người dùng tự chịu trách nhiệm về tính xác thực của thông tin đăng tải. Pawii không chịu trách nhiệm cho bất kỳ tổn thất nào phát sinh từ các giao dịch cá nhân hoặc lời khuyên không chính thức từ người dùng khác.</p>
 
-    <div class="footer">
-        © 2026 Pawii App. Tất cả quyền được bảo lưu.<br>
-        Mọi thắc mắc xin liên hệ: danghld3131994@gmail.com
-    </div>
-</div>
-<div class="moderation-container">
+    <div class="moderation-container">
         <div class="header">
             <h2>Quy Trình Kiểm Duyệt 3 Lớp</h2>
             <p>Hệ thống bảo vệ nội dung tự động kết hợp con người của mạng xã hội Pawii</p>
@@ -193,6 +281,12 @@
         <div class="final-status">
             <span>🐾 Nội dung an toàn - Hiển thị công khai trên hệ thống Pawii</span>
         </div>
-    </div>    
+    </div> 
+    
+    <div class="footer">
+        © 2026 Pawii App. Tất cả quyền được bảo lưu.<br>
+        Mọi thắc mắc xin liên hệ: danghld3131994@gmail.com
+    </div>
+</div>   
 </body>
 </html>
