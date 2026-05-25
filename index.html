@@ -3,50 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quy tắc Cộng đồng & Điều khoản Dịch vụ Pawii</title>
     <style>
         :root {
             --pawii-mint: #11CAA0;
+            --pawii-mint-light: #E7FAF6;
             --pawii-navy: #003E6A;
             --text-main: #334155;
+            --text-muted: #64748B;
             --bg-light: #F8FAFC;
+            --danger-bg: #FFF1F2;
+            --danger-border: #FB7185;
+            --danger-text: #9F1239;
+            --success-bg: #F6FFED;
+            --success-border: #B7EB8F;
+            --success-text: #52C41A;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            background-color: #ffffff;
+            background-color: #F1F5F9;
             margin: 0;
-            padding: 20px;
+            padding: 12px;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 100%;
+            max-width: 768px;
             margin: 0 auto;
+            background: #ffffff;
+            padding: 24px 16px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #E2E8F0;
         }
 
         h1 {
             color: var(--pawii-navy);
             font-size: 24px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            border-bottom: 3px solid var(--pawii-mint);
-            display: inline-block;
+            line-height: 1.3;
+            margin: 0 0 8px 0;
         }
 
         .update-date {
             font-size: 13px;
-            color: #94A3B8;
-            margin-bottom: 24px;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         h2 {
             color: var(--pawii-navy);
             font-size: 18px;
             font-weight: 700;
-            margin-top: 24px;
+            margin-top: 32px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
         }
@@ -58,37 +78,166 @@
             background-color: var(--pawii-mint);
             margin-right: 10px;
             border-radius: 2px;
+            flex-shrink: 0;
         }
 
         p {
-            margin-bottom: 16px;
-            font-size: 15px;
+            margin: 0 0 14px 0;
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: justify;
         }
 
         .highlight-box {
-            background-color: #FFF1F2;
-            border-left: 4px solid #FB7185;
-            padding: 16px;
+            background-color: var(--danger-bg);
+            border-left: 4px solid var(--danger-border);
+            padding: 14px;
             border-radius: 8px;
             margin: 20px 0;
         }
 
         .highlight-box strong {
-            color: #9F1239;
+            color: var(--danger-text);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #4C0519;
         }
 
-        ul {
+        .info-box {
+            background-color: #F0FDF4;
+            border-left: 4px solid #4ADE80;
+            padding: 14px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 13.5px;
+            color: #14532D;
+        }
+
+        ul, ol {
             padding-left: 20px;
-            margin-bottom: 16px;
+            margin: 0 0 16px 0;
         }
 
         li {
-            margin-bottom: 10px;
-            font-size: 15px;
+            margin-bottom: 8px;
+            font-size: 14px;
         }
 
         li strong {
             color: var(--pawii-navy);
+        }
+
+        /* CSS PHẦN TIẾN TRÌNH KIỂM DUYỆT 3 LỚP ĐÃ SỬA LỖI */
+        .moderation-container {
+            background: var(--bg-light);
+            padding: 20px 14px;
+            border-radius: 12px;
+            margin: 32px 0;
+            border: 1px solid #E2E8F0;
+        }
+
+        .moderation-container .section-title {
+            text-align: center;
+            color: var(--pawii-navy);
+            font-weight: 800;
+            font-size: 16px;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+        }
+
+        .moderation-container .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin: 0 0 24px 0;
+        }
+
+        .flow-start {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-muted);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-step {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            padding: 18px 14px 14px 14px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .flow-step:not(:last-of-type)::after {
+            content: "↓";
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: var(--pawii-mint);
+            font-weight: bold;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: -10px;
+            left: 14px;
+            background: var(--pawii-navy);
+            color: #white;
+            color: #ffffff;
+            padding: 1px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--pawii-navy);
+            margin-bottom: 10px;
+            margin-top: 4px;
+        }
+
+        .step-details {
+            margin: 0;
+            padding-left: 16px;
+            color: var(--text-main);
+            font-size: 13px;
+        }
+
+        .step-details li {
+            margin-bottom: 6px;
+        }
+
+        .step-details li strong {
+            color: var(--pawii-navy);
+        }
+
+        .final-status {
+            background: var(--success-bg);
+            border: 1px solid var(--success-border);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--success-text);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 16px;
         }
 
         .footer {
@@ -97,164 +246,79 @@
             border-top: 1px solid #E2E8F0;
             text-align: center;
             font-size: 12px;
-            color: #94A3B8;
-            padding-bottom: 40px;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        .moderation-container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .flow-step {
-            position: relative;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 35px;
-            transition: all 0.3s ease;
-        }
-
-        .flow-step:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.03);
-            border-color: var(--primary-color);
-        }
-
-        /* Mũi tên kết nối giữa các bước */
-        .flow-step:not(:last-child)::after {
-            content: "↓";
-            position: absolute;
-            bottom: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .step-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .step-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 5px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .step-details {
-            margin: 0;
-            padding-left: 20px;
-            color: var(--muted-text);
-            font-size: 14px;
-        }
-
-        .step-details li {
-            margin-bottom: 8px;
-        }
-
-        .step-details li strong {
-            color: var(--text-color);
-        }
-
-        .final-status {
-            background: #f6ffed;
-            border: 1px solid #b7eb8f;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            color: var(--success-color);
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .footer a {
+            color: var(--pawii-mint);
+            text-decoration: none;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Quy tắc Cộng đồng Pawii</h1>
-    <div class="update-date">Cập nhật lần cuối: 25 tháng 05, 2026</div>
-
-    <p>Chào mừng bạn đến với <strong>Pawii</strong>. Để xây dựng một môi trường an toàn và yêu thương cho thú cưng, tất cả người dùng khi đăng bài công khai mọi nội dung xuất hiện trên Pawii phải tuân thủ nguyên tắc: <strong>yêu thương động vật, chia sẻ kiến thức hữu ích và tôn trọng lẫn nhau</strong>. Các bạn cần tôn trọng các điều khoản sau:</p>
-
-    <div class="highlight-box">
-        <strong>CHÍNH SÁCH KHÔNG KHOAN NHƯỢNG:</strong> Mọi hành vi đăng tải nội dung ngược đãi động vật hoặc ngôn từ kích động thù ghét sẽ bị khóa tài khoản vĩnh viễn ngay lập tức mà không cần báo trước.
+    <div class="header-section">
+        <h1>Quy tắc Cộng đồng & Điều khoản Pawii</h1>
+        <div class="update-date">Cập nhật lần cuối: 25 tháng 05, 2026</div>
     </div>
 
-    <h2>1. Nội dung ĐƯỢC PHÉP (Public công khai)</h2>
+    <p>Chào mừng bạn đến với <strong>Pawii</strong>. Để xây dựng một môi trường mạng an toàn, văn minh và tràn đầy yêu thương cho cộng đồng nuôi thú cưng, tất cả người dùng khi tham gia tương tác, đăng tải nội dung đều phải cam kết tuân thủ nguyên tắc cốt lõi: <strong>Yêu thương động vật, chia sẻ kiến thức hữu ích và tôn trọng lẫn nhau</strong>. Vui lòng đọc kỹ các điều khoản dịch vụ dưới đây trước khi trải nghiệm ứng dụng:</p>
+
+    <div class="highlight-box">
+        <strong>CHÍNH SÁCH KHÔNG KHOAN NHƯỢNG (ZERO-TOLERANCE):</strong>
+        <p>Mọi hành vi đăng tải nội dung ngược đãi động vật, lừa đảo kêu gọi từ thiện hoặc ngôn từ kích động thù ghét, xúc phạm chính trị sẽ bị khóa tài khoản vĩnh viễn và chặn thiết bị ngay lập tức mà không cần báo trước.</p>
+    </div>
+
+    <h2>1. Nội dung ĐƯỢC PHÉP (Hiển thị công khai)</h2>
     <ul>
-        <li><strong>Chia sẻ khoảnh khắc:</strong> Hình ảnh, video đáng yêu, hài hước về thú cưng.</li>
-        <li><strong>Kiến thức & Kinh nghiệm:</strong> Bài viết chia sẻ cách chăm sóc, nuôi dạy, dinh dưỡng, huấn luyện thú cưng từ trải nghiệm thực tế hoặc từ bác sĩ thú y.</li>
-        <li><strong>Cứu trợ & Nhận nuôi (Adopt):</strong> Tin đăng tìm chủ mới, tặng nuôi thú cưng miễn phí, hoặc các hoạt động cứu trợ động vật hoàn toàn phi lợi nhuận.</li>
-        <li><strong>Tìm kiếm:</strong> Tin tìm thú cưng thất lạc (không kèm theo các yếu tố chèo kéo chuộc tiền bất hợp pháp).</li>
+        <li><strong>Chia sẻ khoảnh khắc:</strong> Hình ảnh, video đời thường đáng yêu, các khoảnh khắc hài hước và tích cực của vật nuôi.</li>
+        <li><strong>Kiến thức & Kinh nghiệm:</strong> Bài viết khoa học, chia sẻ quy trình chăm sóc, huấn luyện, dinh dưỡng hoặc cẩm nang y tế từ trải nghiệm thực tế hoặc từ các chuyên gia, bác sĩ thú y.</li>
+        <li><strong>Cứu trợ & Nhận nuôi (Adopt):</strong> Tin đăng tìm chủ mới, tặng nuôi thú cưng hoàn toàn <strong>miễn phí</strong>, hoặc hoạt động cứu trợ động vật của các tổ chức phi lợi nhuận hợp pháp.</li>
+        <li><strong>Tìm kiếm lạc pet:</strong> Đăng tin hỗ trợ tìm kiếm thú cưng bị thất lạc (không chứa hành vi tống tiền hoặc chèo kéo chuộc tiền bất hợp pháp).</li>
     </ul>
     
     <h2>2. Nội dung BỊ CẤM HOÀN TOÀN (Vi phạm nghiêm trọng)</h2>
     <ul>
-        <li><strong>Ngược đãi động vật:</strong> Bất kỳ hình ảnh hoặc video nào mô tả hành vi bạo lực đối với động vật. Hình ảnh, video hoặc văn bản miêu tả hành vi đánh đập, giết hại, bỏ rơi, thí nghiệm trái phép hoặc sử dụng động vật làm thức ăn (thịt chó, thịt mèo, cày tơ, tiểu hổ...).</li>
-        <li><strong>Mua bán động vật:</strong> Nghiêm cấm mọi hình thức rao bán động vật quý hiếm hoặc không rõ nguồn gốc. Nghiêm cấm mọi hành vi rao bán, định giá, đấu giá, phối giống thương mại thú cưng trên bảng tin và bình luận.</li>
-        <li><strong>Nội dung nhạy cảm:</strong> Hình ảnh bạo lực, khiêu dâm hoặc gây hãi hùng cho người xem.</li>
-        <li><strong>Thông tin y tế sai lệch:</strong> Chia sẻ các phương pháp chữa bệnh không có cơ sở khoa học, gây nguy hiểm cho vật nuôi. Tự chữa bệnh nguy hiểm tại nhà bằng mẹo dân gian (ví dụ: đắp lá chữa Parvo/Care), bài trừ y học thú y hiện đại, tuyên truyền thuốc lậu.</li>
-        <li><strong>Ngôn từ độc hại (Toxic):</strong> Chửi thề, lăng mạ, phân biệt chủng tộc, xúc phạm cá nhân hoặc tổ chức, gây chia rẽ (drama) trong cộng đồng.</li>
-        <li><strong>Spam & Lừa đảo:</strong> Đăng link rác, link cá độ, quảng cáo sản phẩm không liên quan đến pet, giả danh cứu trợ để trục lợi (scam).</li>
+        <li><strong>Ngược đãi động vật:</strong> Nghiêm cấm tuyệt đối văn bản, hình ảnh hoặc video mô tả hành vi đánh đập, hành hạ, bỏ rơi, thí nghiệm trái phép hoặc sử dụng các loại thú cưng làm thức ăn thương mại (thịt chó, thịt mèo, tiểu hổ...).</li>
+        <li><strong>Mua bán, kinh doanh động vật thương mại:</strong> Nghiêm cấm mọi hành vi định giá, rao bán, đấu giá hoặc quảng cáo dịch vụ phối giống thương mại thú cưng trên bảng tin và phần bình luận nhằm trục lợi cá nhân.</li>
+        <li><strong>Thông tin y tế sai lệch:</strong> Nghiêm cấm tuyên truyền các phương pháp tự chữa bệnh hiểm nghèo tại nhà bằng mẹo dân gian thiếu cơ sở khoa học (như đắp lá, uống thuốc độc chữa Parvo/Care), bài trừ y học thú y hoặc buôn bán thuốc lậu.</li>
+        <li><strong>Ngôn từ độc hại (Toxic):</strong> Chửi thề thô tục, lăng mạ, miệt thị vùng miền/chủng tộc, xúc phạm danh dự cá nhân hoặc tổ chức, cố tình tạo các cuộc tranh cãi tiêu cực (drama) gây chia rẽ cộng đồng.</li>
+        <li><strong>Spam & Lừa đảo tài chính:</strong> Đăng tải link rác, quảng cáo cá độ, cam nhông sản phẩm không liên quan đến thú cưng; đặc biệt là hành vi giả danh hoàn cảnh pet đáng thương để kêu gọi quyên góp từ thiện nhằm trục lợi.</li>
     </ul>
 
-    <h2>3. Quyền hạn của Pawii</h2>
-    <p>Chúng tôi cung cấp các công cụ để cộng đồng tự bảo vệ mình:</p>
+    <h2>3. Điều khoản Miễn trừ Trách nhiệm về Thông tin tự tiết lộ</h2>
+    <p>Pawii là một mạng xã hội mở phục vụ kết nối cộng đồng. Chúng tôi hoàn toàn miễn trừ mọi trách nhiệm pháp lý trong các kịch bản người dùng tự ý công khai thông tin cá nhân của mình hoặc của bên thứ ba trên các vùng nội dung công khai (bài đăng, bình luận, ảnh):</p>
     <ul>
-        <li><strong>Báo cáo (Flag):</strong> Người dùng có thể báo cáo bất kỳ bài viết nào vi phạm quy tắc. Admin sẽ xử lý trong vòng 24 giờ.</li>
-        <li><strong>Chặn (Block):</strong> Bạn có quyền chặn bất kỳ người dùng nào để không nhìn thấy nội dung của họ.</li>
-        <li><strong>Xóa nội dung:</strong> Pawii có quyền gỡ bỏ bài viết vi phạm tiêu chuẩn cộng đồng.</li>
+        <li><strong>Rủi ro an toàn cá nhân:</strong> Khi người dùng chủ động tiết lộ số điện thoại, địa chỉ nhà, số tài khoản ngân hàng hoặc định vị GPS, người dùng phải tự chịu trách nhiệm nếu bị kẻ xấu thu thập thông tin để quấy rối, lừa đảo, tống tiền hoặc trộm cắp tài sản/thú cưng.</li>
+        <li><strong>Giao dịch tự phát bên ngoài:</strong> Vì Pawii nghiêm cấm buôn bán thú cưng, mọi hành vi cố tình để lại phương thức liên lạc (Zalo/SĐT) để giao dịch ngầm, chuyển khoản đặt cọc mua bán pet và dẫn đến bị lừa đảo sẽ hoàn toàn nằm ngoài phạm vi xử lý của Pawii. Pawii không đóng vai trò trọng tài và không có nghĩa vụ đền bù thiệt hại tài chính.</li>
     </ul>
 
-    <h2>4. Quyền sở hữu trí tuệ</h2>
-    <p>Bạn giữ quyền sở hữu đối với nội dung mình đăng tải, nhưng bạn cấp cho Pawii quyền hiển thị nội dung đó trên nền tảng để phục vụ mục đích kết nối cộng đồng.</p>
+    <h2>4. Quy trình Xử lý Vi phạm Đặc biệt Nghiêm trọng</h2>
+    <p>Đối với các hành vi cố tình phá hoại hệ thống (Hack, Spam Bot, DDoS), vi phạm luật pháp quốc gia hoặc có hành vi hình sự (Lừa đảo từ thiện, Ngược đãi động vật nghiêm trọng), Pawii sẽ áp dụng quy trình xử lý khẩn cấp:</p>
+    <ol>
+        <li><strong>Đóng băng tức thì:</strong> Thu hồi quyền truy cập (Token) trên mọi thiết bị và ẩn toàn bộ nội dung của tài khoản đó khỏi hệ thống trong vòng 0.5 giây.</li>
+        <li><strong>Tịch thu thiết bị (Hardware Ban):</strong> Đưa Email, Số điện thoại và mã định danh phần cứng (Device ID) của thiết bị vào danh sách đen vĩnh viễn, ngăn chặn tuyệt đối việc tạo tài khoản rác mới.</li>
+        <li><strong>Phối hợp cơ quan chức năng:</strong> Pawii lưu giữ toàn bộ log dữ liệu vi phạm làm bằng chứng và có quyền chủ động cung cấp thông tin (IP, Nhật ký hoạt động) cho Cơ quan Cảnh sát điều tra hoặc Cục An ninh mạng khi có yêu cầu để xử lý theo luật định mà không cần báo trước hoặc cần sự cho phép từ phía người dùng.</li>
+    </ol>
 
-    <h2>5. Trách nhiệm người dùng</h2>
-    <p>Người dùng tự chịu trách nhiệm về tính xác thực của thông tin đăng tải. Pawii không chịu trách nhiệm cho bất kỳ tổn thất nào phát sinh từ các giao dịch cá nhân hoặc lời khuyên không chính thức từ người dùng khác.</p>
+    <h2>5. Quyền hạn của Pawii & Quyền sở hữu trí tuệ</h2>
+    <p>Bạn giữ quyền sở hữu đối với nội dung mình đăng tải, nhưng bạn cấp cho Pawii quyền hiển thị, lưu trữ nội dung đó trên hệ thống để phục vụ mục đích vận hành ứng dụng. Pawii có toàn quyền gỡ bỏ, chỉnh sửa hoặc chuyển trạng thái kiểm duyệt bất kỳ nội dung nào mà ban quản trị đánh giá là không phù hợp với quy chuẩn văn minh của nền tảng.</p>
 
     <div class="moderation-container">
-        <div class="header">
-            <h2>Quy Trình Kiểm Duyệt 3 Lớp</h2>
-            <p>Hệ thống bảo vệ nội dung tự động kết hợp con người của mạng xã hội Pawii</p>
-        </div>
+        <div class="section-title">Hệ Thống Kiểm Duyệt 3 Lớp Từ Động</div>
+        <div class="section-desc">Quy trình công nghệ bảo vệ không gian mạng sạch cho Pawii</div>
 
-        <div style="text-align: center; font-weight: bold; margin-bottom: 25px; color: var(--muted-text); font-size: 14px;">
-            🎬 USER BẤM ĐĂNG BÀI / BÌNH LUẬN
-        </div>
+        <div class="flow-start">🎬 USER BẤM ĐĂNG BÀI / BÌNH LUẬN</div>
 
         <div class="flow-step">
             <span class="step-badge">Lớp 1</span>
             <div class="step-title">📱 Local Text Filter (Aho-Corasick & Evasion Rules)</div>
             <ul class="step-details">
-                <li><strong>Cơ chế:</strong> Chạy trực tiếp tại thiết bị user ngay khi nhấn nút gửi nhằm tối ưu tài nguyên hệ thống.</li>
-                <li><strong>Xử lý Evasion:</strong> Hàm tự động bẻ gãy teencode, xóa dấu chấm, khoảng trắng lách luật (ví dụ: <code>b.á.n c-h-ó</code> → <code>bancho</code>).</li>
-                <li><strong>Hành động:</strong> Nếu dính từ khóa <strong>P0 (Buôn bán/Ngược đãi)</strong> → <strong>CHẶN NGAY</strong> tại máy, không lưu vào Database Supabase. Nếu dính <strong>P1 (Từ thô tục)</strong> → Tự động làm sạch thành <code>🐾</code> qua package <code>safe_text</code>.</li>
+                <li><strong>Cơ chế:</strong> Thực thi trực tiếp trên thiết bị của người dùng nhằm mang lại phản hồi tức thì và tiết kiệm băng thông mạng.</li>
+                <li><strong>Xử lý lách luật:</strong> Bẻ gãy teencode, loại bỏ ký tự đặc biệt và dấu chấm (Ví dụ: <code>b.á.n c-h-ó</code> → <code>bancho</code>).</li>
+                <li><strong>Hành động:</strong> Dính từ khóa <strong>P0 (Kinh doanh/Ngược đãi)</strong> sẽ bị **CHẶN ĐĂNG BÀI** ngay tại chỗ. Từ thô tục nhẹ (P1) sẽ tự động chuyển thành biểu tượng <code>🐾</code>.</li>
             </ul>
         </div>
 
@@ -262,30 +326,31 @@
             <span class="step-badge">Lớp 2</span>
             <div class="step-title">☁️ Cloud AI Moderation (Hugging Face & Google Vision)</div>
             <ul class="step-details">
-                <li><strong>Kiểm duyệt Hình ảnh:</strong> Gửi ảnh lên Google Cloud Vision API để quét các danh mục nhạy cảm (18+, máu me, bạo lực ngược đãi động vật).</li>
-                <li><strong>Phân tích ngữ cảnh:</strong> Gửi văn bản lên Hugging Face Inference API sử dụng các model chuyên sâu tiếng Việt để phát hiện các nội dung toxic, thù ghét hoặc lăng mạ tinh vi mà bộ lọc từ khóa có thể bỏ sót.</li>
-                <li><strong>Hành động:</strong> Nếu AI chấm điểm vi phạm cao → Tự động ẩn bài viết và đẩy vào hàng chờ duyệt.</li>
+                <li><strong>Kiểm duyệt ảnh:</strong> Trích xuất dữ liệu ảnh qua Google Cloud Vision API nhằm phát hiện ảnh máu me, bạo lực động vật hoặc ảnh 18+.</li>
+                <li><strong>Quét ngữ cảnh:</strong> API của Hugging Face phân tích sâu cấu trúc câu để phát hiện các hành vi thù ghét, công kích cá nhân tinh vi.</li>
+                <li><strong>Hành động:</strong> Nếu điểm số độc hại vượt ngưỡng an toàn, hệ thống tự động ẩn bài viết và đẩy vào hàng chờ duyệt thủ công.</li>
             </ul>
         </div>
 
         <div class="flow-step">
             <span class="step-badge">Lớp 3</span>
-            <div class="step-title">👥 Community Report & Manual Review</div>
+            <div class="step-title">👥 Báo cáo Cộng đồng & Kiểm duyệt Thủ công</div>
             <ul class="step-details">
-                <li><strong>Cơ chế cộng đồng:</strong> Bài viết sau khi hiển thị vẫn tiếp tục bị giám sát bởi nút "Báo cáo vi phạm" từ phía người dùng.</li>
-                <li><strong>Ngưỡng kích hoạt:</strong> Nếu một nội dung nhận từ <strong>3 lượt báo cáo trở lên</strong>, hệ thống tự động tạm ẩn khỏi bảng tin (Feed).</li>
-                <li><strong>Hành động:</strong> Đội ngũ Admin/Mod sẽ thẩm định thủ công tại Dashboard quản trị để đưa ra quyết định cuối cùng (Giữ lại bài viết hoặc Xóa bài & Trừ điểm tín nhiệm tài khoản).</li>
+                <li><strong>Cơ chế Report:</strong> Cho phép cộng đồng tự thanh lọc bằng cách bấm nút Báo cáo các nội dung có dấu hiệu vi phạm.</li>
+                <li><strong>Ẩn tự động:</strong> Khi một bài viết nhận đủ từ <strong>3 lượt báo cáo</strong> từ các tài khoản khác nhau, hệ thống tự động ẩn bài viết khỏi bảng tin.</li>
+                <li><strong>Hành động:</strong> Đội ngũ Admin/Mod thẩm định nội dung trong trang quản trị để đưa ra phán quyết cuối cùng (Giữ lại hoặc Xóa vĩnh viễn & Trừ điểm tín nhiệm).</li>
             </ul>
         </div>
 
         <div class="final-status">
-            <span>🐾 Nội dung an toàn - Hiển thị công khai trên hệ thống Pawii</span>
+            <span>🐾 Nội dung hợp lệ - Hiển thị an toàn trên Feed Pawii</span>
         </div>
     </div> 
-    
+
     <div class="footer">
         © 2026 Pawii App. Tất cả quyền được bảo lưu.<br>
-        Mọi thắc mắc xin liên hệ: danghld3131994@gmail.com
+        Bằng việc đăng ký tài khoản, bạn thừa nhận đã đọc và đồng ý với các điều khoản trên.<br>
+        Mọi thắc mắc xin liên hệ ban quản trị: <a href="mailto:danghld3131994@gmail.com">danghld3131994@gmail.com</a>
     </div>
 </div>   
 </body>
