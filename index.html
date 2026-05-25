@@ -307,16 +307,16 @@
     <p>Bạn giữ quyền sở hữu đối với nội dung mình đăng tải, nhưng bạn cấp cho Pawii quyền hiển thị, lưu trữ nội dung đó trên hệ thống để phục vụ mục đích vận hành ứng dụng. Pawii có toàn quyền gỡ bỏ, chỉnh sửa hoặc chuyển trạng thái kiểm duyệt bất kỳ nội dung nào mà ban quản trị đánh giá là không phù hợp với quy chuẩn văn minh của nền tảng.</p>
 
     <div class="moderation-container">
-        <div class="section-title">Hệ Thống Kiểm Duyệt 3 Lớp Từ Động</div>
+        <div class="section-title">Hệ Thống Kiểm Duyệt 3 Lớp</div>
         <div class="section-desc">Quy trình công nghệ bảo vệ không gian mạng sạch cho Pawii</div>
 
         <div class="flow-start">🎬 USER BẤM ĐĂNG BÀI / BÌNH LUẬN</div>
 
         <div class="flow-step">
             <span class="step-badge">Lớp 1</span>
-            <div class="step-title">📱 Local Text Filter (Aho-Corasick & Evasion Rules)</div>
+            <div class="step-title">📱 Local Text Filter</div>
             <ul class="step-details">
-                <li><strong>Cơ chế:</strong> Thực thi trực tiếp trên thiết bị của người dùng nhằm mang lại phản hồi tức thì và tiết kiệm băng thông mạng.</li>
+                <li><strong>Cơ chế:</strong> Thực thi trực tiếp trên thiết bị của người dùng nhằm mang lại phản hồi tức thì giúp người dùng hiểu rõ.</li>
                 <li><strong>Xử lý lách luật:</strong> Bẻ gãy teencode, loại bỏ ký tự đặc biệt và dấu chấm (Ví dụ: <code>b.á.n c-h-ó</code> → <code>bancho</code>).</li>
                 <li><strong>Hành động:</strong> Dính từ khóa <strong>P0 (Kinh doanh/Ngược đãi)</strong> sẽ bị **CHẶN ĐĂNG BÀI** ngay tại chỗ. Từ thô tục nhẹ (P1) sẽ tự động chuyển thành biểu tượng <code>🐾</code>.</li>
             </ul>
@@ -324,11 +324,11 @@
 
         <div class="flow-step">
             <span class="step-badge">Lớp 2</span>
-            <div class="step-title">☁️ Cloud AI Moderation (Hugging Face & Google Vision)</div>
+            <div class="step-title">☁️ Cloud AI Moderation kiểm tra bài viết.</div>
             <ul class="step-details">
-                <li><strong>Kiểm duyệt ảnh:</strong> Trích xuất dữ liệu ảnh qua Google Cloud Vision API nhằm phát hiện ảnh máu me, bạo lực động vật hoặc ảnh 18+.</li>
-                <li><strong>Quét ngữ cảnh:</strong> API của Hugging Face phân tích sâu cấu trúc câu để phát hiện các hành vi thù ghét, công kích cá nhân tinh vi.</li>
-                <li><strong>Hành động:</strong> Nếu điểm số độc hại vượt ngưỡng an toàn, hệ thống tự động ẩn bài viết và đẩy vào hàng chờ duyệt thủ công.</li>
+                <li><strong>Kiểm duyệt ảnh:</strong> Trích xuất dữ liệu ảnh, nhằm phát hiện ảnh máu me, bạo lực động vật hoặc ảnh 18+.</li>
+                <li><strong>Quét ngữ cảnh:</strong> AI phân tích sâu cấu trúc câu để phát hiện các hành vi thù ghét, công kích cá nhân tinh vi.</li>
+                <li><strong>Hành động:</strong> Nếu điểm số độc hại vượt ngưỡng an toàn, hệ thống sẽ không cho đăng bài gây ảnh hưởng cộng đồng.</li>
             </ul>
         </div>
 
@@ -337,8 +337,8 @@
             <div class="step-title">👥 Báo cáo Cộng đồng & Kiểm duyệt Thủ công</div>
             <ul class="step-details">
                 <li><strong>Cơ chế Report:</strong> Cho phép cộng đồng tự thanh lọc bằng cách bấm nút Báo cáo các nội dung có dấu hiệu vi phạm.</li>
-                <li><strong>Ẩn tự động:</strong> Khi một bài viết nhận đủ từ <strong>3 lượt báo cáo</strong> từ các tài khoản khác nhau, hệ thống tự động ẩn bài viết khỏi bảng tin.</li>
-                <li><strong>Hành động:</strong> Đội ngũ Admin/Mod thẩm định nội dung trong trang quản trị để đưa ra phán quyết cuối cùng (Giữ lại hoặc Xóa vĩnh viễn & Trừ điểm tín nhiệm).</li>
+                <li><strong>Ẩn tự động:</strong> Chỉ cần bài viết hay comments nhận <strong>1 lượt báo cáo</strong> từ các tài khoản khác nhau, hệ thống tự động ẩn bài viết khỏi bảng tin ngay lập tức.</li>
+                <li><strong>Hành động:</strong> Đội ngũ Admin/Mod thẩm định nội dung trong trang quản trị để đưa ra phán quyết cuối cùng (Giữ lại hoặc Xóa vĩnh viễn & Trừ điểm tín nhiệm) trong vòng 24h.</li>
             </ul>
         </div>
 
