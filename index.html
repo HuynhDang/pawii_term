@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+     <title>Google Translate WebView</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Quy tắc Cộng đồng & Điều khoản Dịch vụ Pawii</title>
     <style>
@@ -258,6 +259,18 @@
     </style>
 </head>
 <body>
+ <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+            {pageLanguage: 'vi', includedLanguages: 'en,th,zh,km'},
+            'google_translate_element'
+          );
+        }
+      </script>
+      <script type="text/javascript" 
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+      </script>    
 <div class="container">
     <div class="header-section">
         <h1>Quy tắc Cộng đồng & Điều khoản Pawii</h1>
