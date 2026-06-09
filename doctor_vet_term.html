@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Điều khoản Đối tác Bác sĩ - Pawii</title>
     <style>
-        /* RESET & BASE STYLES */
+        /* ĐỊNH DẠNG FONT CHỮ SẠCH & THOÁNG TRÊN MOBILE */
         * {
             margin: 0;
             padding: 0;
@@ -14,151 +14,58 @@
         }
 
         body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: #0f172a;
-            position: relative;
-            overflow-x: hidden;
+            background: transparent; /* Không màu nền để ăn theo nền của App sếp */
+            padding: 16px;
+            color: #334155; /* Màu chữ xám đen cao cấp, không bị mỏi mắt */
         }
 
-        /* 3 LỚP BLUR MESH GRADIENT BACKGROUND BACKGROUND */
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-        }
-
-        .circle-1 {
-            top: -10%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: #003E6A; /* Navy Clor */
-        }
-
-        .circle-2 {
-            bottom: -10%;
-            right: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: #11CAA0; /* Mint Color */
-        }
-
-        .circle-3 {
-            top: 40%;
-            left: 50%;
-            width: 35vw;
-            height: 35vw;
-            background: #FF829B; /* Pink Light accent */
-            opacity: 0.06;
-        }
-
-        /* MAIN GLASS CARD CONTAINER */
-        .terms-container {
-            position: relative;
-            z-index: 2;
+        .terms-wrapper {
             width: 100%;
             max-width: 680px;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
         }
 
-        /* HEADER HEADER */
-        .terms-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .terms-header .logo-icon {
-            font-size: 40px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .terms-header h1 {
-            color: #003E6A;
-            font-size: 22px;
+        /* TIÊU ĐỀ CHÍNH */
+        .terms-title {
+            color: #003E6A; /* Màu Navy thương hiệu */
+            font-size: 20px;
             font-weight: 800;
-            letter-spacing: -0.5px;
             text-transform: uppercase;
             line-height: 1.4;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
-        .terms-header p {
-            color: #64748b;
+        .terms-subtitle {
             font-size: 13px;
-            margin-top: 6px;
-        }
-
-        /* SCROLLABLE TERMS BOX */
-        .terms-content-box {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            height: 380px;
-            overflow-y: scroll;
-            padding: 20px;
+            color: #64748b;
             margin-bottom: 24px;
-            scroll-behavior: smooth;
-        }
-
-        /* Định dạng thanh cuộn mượt kiểu hiện đại */
-        .terms-content-box::-webkit-scrollbar {
-            width: 6px;
-        }
-        .terms-content-box::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .terms-content-box::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        .terms-content-box::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        /* TYPOGRAPHY INSIDE TERMS BOX */
-        .terms-content-box p.intro-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #334155;
-            margin-bottom: 20px;
             font-style: italic;
         }
 
+        /* ĐOẠN MỞ ĐẦU */
+        .terms-intro {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: #1e293b;
+        }
+
+        /* CÁC CHƯƠNG MỤC LỚN */
         .terms-section {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .terms-section h2 {
             color: #003E6A;
             font-size: 15px;
             font-weight: 700;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
         }
 
+        /* NỘI DUNG CHI TIẾT */
         .terms-section ul {
             list-style: none;
         }
@@ -166,12 +73,12 @@
         .terms-section ul li {
             font-size: 13.5px;
             line-height: 1.6;
-            color: #334155;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
             padding-left: 14px;
         }
 
+        /* Dấu chấm đầu dòng màu xanh Mint tinh tế */
         .terms-section ul li::before {
             content: "•";
             color: #11CAA0;
@@ -181,181 +88,71 @@
             top: 0;
         }
 
-        /* Khối highlight răn đe mạnh */
-        .alert-highlight {
-            background: #fef2f2;
+        /* KHỐI ĐẶC BIỆT CẢNH BÁO RĂN ĐE */
+        .danger-alert {
+            background: #fff5f5;
             border-left: 4px solid #ef4444;
-            padding: 12px;
+            padding: 12px 14px;
             border-radius: 0 12px 12px 0;
             font-weight: 600;
+            color: #991b1b;
         }
-        .alert-highlight::before {
-            content: "" !important;
+        
+        .danger-alert::before {
+            content: "" !important; /* Bỏ dấu chấm tròn ở khối cảnh báo */
             padding-left: 0 !important;
-        }
-
-        /* ACTION FOOTER */
-        .terms-footer {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .checkbox-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 13.5px;
-            color: #334155;
-            line-height: 1.4;
-        }
-
-        .checkbox-container input {
-            margin-top: 2px;
-            width: 16px;
-            height: 16px;
-            accent-color: #11CAA0;
-            cursor: pointer;
-        }
-
-        /* BUTTON ACTION STATE */
-        .btn-submit {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 700;
-            color: white;
-            background: linear-gradient(135deg, #003E6A 0%, #002540 100%);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 62, 106, 0.2);
-        }
-
-        .btn-submit:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 62, 106, 0.3);
-        }
-
-        .btn-submit:active:not(:disabled) {
-            transform: translateY(0);
-        }
-
-        /* Trạng thái khóa nút khi chưa đọc/chưa tick */
-        .btn-submit:disabled {
-            background: #cbd5e1;
-            color: #94a3b8;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        .warning-text {
-            font-size: 11px;
-            color: #94a3b8;
-            text-align: center;
-            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-    <!-- LAYER MESH BACKGROUND -->
-    <div class="mesh-bg">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-3"></div>
-    </div>
+    <div class="terms-wrapper">
+        <!-- PHẦN TIÊU ĐỀ -->
+        <h1 class="terms-title">Điều Khoản & Cam Kết Đăng Ký Đối Tác</h1>
+        <p class="terms-subtitle">Hệ thống xác thực Bác sĩ thú y đối tác - Nền tảng Pawii</p>
 
-    <!-- MAIN UI CARD -->
-    <div class="terms-container">
-        <div class="terms-header">
-            <span class="logo-icon">🐾</span>
-            <h1>Điều Khoản & Cam Kết Đăng Ký</h1>
-            <p>Hệ thống đối tác bác sĩ thú y Pawii Platform</p>
+        <!-- LỜI MỞ ĐẦU -->
+        <p class="terms-intro">Chào mừng bạn đến với Mạng lưới Bác sĩ Thú y Đối tác của Pawii. Trước khi nộp hồ sơ, bạn bắt buộc phải đọc kỹ, hiểu rõ và đồng ý toàn bộ các điều khoản ràng buộc pháp lý dưới đây. Hành động nộp hồ sơ được pháp luật công nhận là chữ ký điện tử đồng thuận của bạn.</p>
+        
+        <!-- CHƯƠNG 1 -->
+        <div class="terms-section">
+            <h2>1. Cam kết tính chính xác và Hợp pháp của Hồ sơ</h2>
+            <ul>
+                <li><strong>1.1.</strong> Người đăng ký (sau đây gọi là "Đối tác") cam kết toàn bộ thông tin cá nhân, thông tin phòng khám, số Chứng chỉ hành nghề, bằng cấp chuyên môn và các tài liệu đính kèm (ảnh chụp CCCD, ảnh chụp chứng chỉ, ảnh selfie) là hoàn toàn chính xác, có thật, chính chủ và được cơ quan nhà nước có thẩm quyền cấp phát hợp pháp.</li>
+                <li><strong>1.2.</strong> Đối tác tuyệt đối không được sử dụng bằng cấp của người khác, hoặc các tài liệu đã qua chỉnh sửa, tẩy xóa, làm giả bằng công nghệ (Photoshop, AI).</li>
+                <li class="danger-alert">⚠️ 1.3. CẢNH BÁO HÌNH SỰ: Đối tác hiểu rõ và thừa nhận rằng hành vi cố tình cung cấp tài liệu giả mạo nhằm mục đích hành nghề trên ứng dụng cấu thành tội "Làm giả con dấu, tài liệu của cơ quan, tổ chức" và "Lừa đảo chiếm đoạt tài sản" theo Bộ luật Hình sự. Pawii sẽ ngay lập tức chuyển dữ liệu sang cơ quan Công an điều tra khi phát hiện sai phạm.</li>
+            </ul>
         </div>
 
-        <!-- SCROLLABLE BOX -->
-        <div class="terms-content-box" id="termsBox">
-            <p class="intro-text">Chào mừng bạn đến với Mạng lưới Bác sĩ Thú y Đối tác của Pawii. Trước khi nộp hồ sơ, bạn bắt buộc phải đọc kỹ, hiểu rõ và đồng ý toàn bộ các điều khoản ràng buộc pháp lý dưới đây. Hành động nộp hồ sơ được pháp luật công nhận là chữ ký điện tử đồng thuận của bạn.</p>
-            
-            <div class="terms-section">
-                <h2>1. Cam kết tính chính xác và Hợp pháp của Hồ sơ</h2>
-                <ul>
-                    <li><strong>1.1.</strong> Người đăng ký (sau đây gọi là "Đối tác") cam kết toàn bộ thông tin cá nhân, thông tin phòng khám, số Chứng chỉ hành nghề, bằng cấp chuyên môn và các tài liệu đính kèm (ảnh chụp CCCD, ảnh chụp chứng chỉ, ảnh selfie) là hoàn toàn chính xác, có thật, chính chủ và được cơ quan nhà nước có thẩm quyền cấp phát hợp pháp.</li>
-                    <li><strong>1.2.</strong> Đối tác tuyệt đối không được sử dụng bằng cấp của người khác, hoặc các tài liệu đã qua chỉnh sửa, tẩy xóa, làm giả bằng công nghệ (Photoshop, AI).</li>
-                    <li class="alert-highlight">⚠️ 1.3. RĂN ĐE HÌNH SỰ: Đối tác hiểu rõ và thừa nhận rằng hành vi cố tình cung cấp tài liệu giả mạo nhằm mục đích hành nghề trên ứng dụng cấu thành tội "Làm giả con dấu, tài liệu của cơ quan, tổ chức" và "Lừa đảo chiếm đoạt tài sản" theo Bộ luật Hình sự. Pawii sẽ ngay lập tức chuyển dữ liệu sang cơ quan Công an điều tra khi phát hiện dấu hiệu vi phạm.</li>
-                </ul>
-            </div>
-
-            <div class="terms-section">
-                <h2>2. Đóng băng dữ liệu khi chờ duyệt (Pending)</h2>
-                <ul>
-                    <li><strong>2.1.</strong> Ngay sau khi bấm nút [Gửi hồ sơ], toàn bộ tài khoản của Đối tác sẽ chuyển sang trạng thái "Chờ duyệt" (pending).</li>
-                    <li><strong>2.2.</strong> Trong quá trình này, hệ thống sẽ đóng băng toàn bộ quyền chỉnh sửa. Đối tác không được phép thay đổi bất kỳ trường thông tin nào để đảm bảo tính toàn vẹn dữ liệu kiểm duyệt.</li>
-                    <li><strong>2.3.</strong> Nếu hồ sơ bị từ chối (rejected), hệ thống mở khóa để Đối tác sửa đổi dựa trên lý do cụ thể từ Ban quản trị. Khi nộp lại, hệ thống sẽ tiếp tục đóng băng để tiến hành chu kỳ duyệt mới.</li>
-                </ul>
-            </div>
-
-            <div class="terms-section">
-                <h2>3. Giới hạn trách nhiệm pháp lý (Medical Disclaimer)</h2>
-                <ul>
-                    <li><strong>3.1.</strong> Nền tảng Pawii hoạt động với tư cách là bên trung gian kỹ thuật, cung cấp giải pháp công nghệ kết nối nhu cầu giữa Chủ thú cưng và Bác sĩ thú y.</li>
-                    <li><strong>3.2.</strong> Pawii không chịu bất kỳ trách nhiệm pháp lý, hình sự hay dân sự nào liên quan đến các sự cố y khoa, chẩn đoán sai, kê đơn lỗi, hoặc thiệt hại về tính mạng thú cưng do Đối tác gây ra trong quá trình tư vấn trực tuyến hoặc khám chữa bệnh thực tế.</li>
-                    <li><strong>3.3.</strong> Mọi tranh chấp phát sinh từ dịch vụ y tế sẽ được giải quyết trực tiếp giữa Đối tác và Khách hàng theo quy định pháp luật.</li>
-                </ul>
-            </div>
-
-            <div class="terms-section">
-                <h2>4. Chế tài Đóng băng Tài chính</h2>
-                <ul>
-                    <li><strong>4.1.</strong> Pawii có toàn quyền đóng băng ngay lập tức toàn bộ số dư doanh thu (tiền tư vấn chat, tiền khám chưa rút) và khóa tài khoản vĩnh viễn của Đối tác mà không cần hoàn trả nếu phát hiện gian lận bằng cấp, bị khiếu nại có bằng chứng về việc chữa bệnh sai quy trình nghiêm trọng, hoặc tự ý thu phí ngoài luồng.</li>
-                    <li><strong>4.2.</strong> Số tiền đóng băng sẽ được sử dụng để bồi thường thiệt hại trực tiếp cho khách hàng bị ảnh hưởng bởi hành vi vi phạm của Đối tác.</li>
-                </ul>
-            </div>
+        <!-- CHƯƠNG 2 -->
+        <div class="terms-section">
+            <h2>2. Đóng băng dữ liệu khi chờ duyệt (Pending Verification)</h2>
+            <ul>
+                <li><strong>2.1.</strong> Ngay sau khi bấm nút gửi hồ sơ, toàn bộ tài khoản của Đối tác sẽ chuyển sang trạng thái "Chờ duyệt" (pending).</li>
+                <li><strong>2.2.</strong> Trong quá trình này, hệ thống sẽ đóng băng toàn bộ quyền chỉnh sửa. Đối tác không được phép thay đổi bất kỳ trường thông tin nào để đảm bảo tính toàn vẹn dữ liệu kiểm duyệt.</li>
+                <li><strong>2.3.</strong> Nếu hồ sơ bị từ chối (rejected), hệ thống mở khóa để Đối tác sửa đổi dựa trên lý do cụ thể từ Ban quản trị. Khi nộp lại, hệ thống sẽ tiếp tục đóng băng để tiến hành chu kỳ duyệt mới.</li>
+            </ul>
         </div>
 
-        <!-- ACTION FOOTER -->
-        <div class="terms-footer">
-            <label class="checkbox-container">
-                <input type="checkbox" id="agreeCheckbox" disabled>
-                <span>Tôi đã đọc kỹ, hiểu rõ các cảnh báo hình sự và cam kết tự chịu 100% trách nhiệm pháp lý về thông tin hồ sơ của mình.</span>
-            </label>
+        <!-- CHƯƠNG 3 -->
+        <div class="terms-section">
+            <h2>3. Giới hạn trách nhiệm pháp lý (Medical Disclaimer)</h2>
+            <ul>
+                <li><strong>3.1.</strong> Nền tảng Pawii hoạt động với tư cách là bên trung gian kỹ thuật, cung cấp giải pháp công nghệ kết nối nhu cầu giữa Chủ thú cưng và Bác sĩ thú y.</li>
+                <li><strong>3.2.</strong> Pawii không chịu bất kỳ trách nhiệm pháp lý, hình sự hay dân sự nào liên quan đến các sự cố y khoa, chẩn đoán sai, kê đơn thuốc lỗi, hoặc thiệt hại về tính mạng thú cưng do Đối tác gây ra trong quá trình tư vấn trực tuyến hoặc khám chữa bệnh thực tế.</li>
+                <li><strong>3.3.</strong> Mọi tranh chấp phát sinh từ dịch vụ y tế sẽ được giải quyết trực tiếp giữa Đối tác và Khách hàng theo quy định pháp luật.</li>
+            </ul>
+        </div>
 
-            <button class="btn-submit" id="submitBtn" disabled>Gửi Hồ Sơ Xác Thực Ngay</button>
-            <p class="warning-text" id="scrollWarning">Vui lòng cuộn xuống đọc đến cuối văn bản điều khoản để kích hoạt xác nhận.</p>
+        <!-- CHƯƠNG 4 -->
+        <div class="terms-section">
+            <h2>4. Chế tài Đóng băng Tài chính và Tước quyền truy cập</h2>
+            <ul>
+                <li><strong>4.1.</strong> Pawii có toàn quyền đóng băng ngay lập tức toàn bộ số dư doanh thu (tiền tư vấn chat, tiền khám chưa rút) và khóa tài khoản vĩnh viễn của Đối tác mà không cần hoàn trả nếu phát hiện gian lận bằng cấp, bị khiếu nại có bằng chứng về việc chữa bệnh sai quy trình nghiêm trọng, hoặc tự ý thu phí ngoài luồng của khách hàng.</li>
+                <li><strong>4.2.</strong> Số tiền đóng băng sẽ được sử dụng để lập quỹ bồi thường thiệt hại trực tiếp cho khách hàng bị ảnh hưởng bởi hành vi vi phạm của Đối tác.</li>
+            </ul>
         </div>
     </div>
 
-    <!-- INTERACTION LOGIC SCRIPT -->
-    <script>
-        const termsBox = document.getElementById('termsBox');
-        const agreeCheckbox = document.getElementById('agreeCheckbox');
-        const submitBtn = document.getElementById('submitBtn');
-        const scrollWarning = document.getElementById('scrollWarning');
-
-        // LOGIC CHỐT CHẶN: Bắt buộc cuộn xuống đáy hộp chữ mới cho tick chọn (Chống click rác)
-        termsBox.addEventListener('scroll', () => {
-            // Tính toán khoảng cách cuộn (Sai số cho phép 5px để mượt mà trên mobile)
-            const isAtBottom = termsBox.scrollHeight - termsBox.scrollTop <= termsBox.clientHeight + 5;
-            
-            if (isAtBottom) {
-                agreeCheckbox.disabled = false;
-                scrollWarning.style.color = '#11CAA0';
-                scrollWarning.innerText = '✓ Đã đọc hết điều khoản. Bạn có thể xác nhận ngay bây giờ.';
-            }
-        });
-
-        // Kích hoạt nút Gửi khi đã tích chọn ô Đồng ý
-        agreeCheckbox.addEventListener('change', (e) => {
-            submitBtn.disabled = !e.target.checked;
-        });
-
-        // Luồng gửi dữ liệu (Mobile App có thể bắt sự kiện click này qua JavascriptChannel)
-        submitBtn.addEventListener('click', () => {
-            alert('Hồ sơ đã được gửi thành công! Hệ thống bắt đầu đóng băng dữ liệu để tiến hành kiểm duyệt.');
-        });
-    </script>
 </body>
 </html>
