@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "updated_at": "2026-06-24T00:00:00Z",
   "config": {
     "case_sensitive": false,
@@ -78,7 +78,7 @@
   "whitelist": [
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
     "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí",
-    "transfer", "cute", "mai", "phomai", "phômai"
+    "transfer", "cute", "mai", "phomai", "phômai", "home", "mẹ", "bố", "ba", "cha"
 
 
   ]
