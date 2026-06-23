@@ -8,7 +8,7 @@
   },
   "categories": {
     "P0_CRITICAL": {
-      "label": "Vi phạm nghiêm trọng - Chặn & Khóa",
+      "label": "Vi phạm nghiêm trọng - Chặn & Khóa", 
       "keywords": [
         "thịt chó", "thịt mèo", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", "hành hạ", 
         "tra tấn", "kích điện", "xẻ thịt", "thuốc chuột", "bả chó", "xiên", "chọc tiết",
@@ -27,7 +27,7 @@
         "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
         "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
         "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem",
-        "k", "củ", "lít", "m", "khoai", "cá", "sdt", "fone", "p_h_o_n_e", "za-lo", "zeplao",
+        "k", "củ", "lít", "m", "khoai", "sdt", "fone", "p_h_o_n_e", "za-lo", "zeplao",
         "zep-lao"
       ],
       "penalty_points": 15
