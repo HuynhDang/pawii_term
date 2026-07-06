@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updated_at": "2026-06-24T00:00:00Z",
+  "version": 8,
+  "updated_at": "2026-07-06T00:00:00Z",
   "config": {
     "case_sensitive": false,
     "replacement_char": "🐾",
@@ -10,10 +10,10 @@
     "P0_CRITICAL": {
       "label": "Vi phạm nghiêm trọng - Chặn & Khóa", 
       "keywords": [
-        "thịt chó", "thịt mèo", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", "hành hạ", 
+        "thịt", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", "hành hạ", 
         "tra tấn", "kích điện", "xẻ thịt", "thuốc chuột", "bả chó", "xiên", "chọc tiết",
         "ngược đãi", "bỏ rơi", "vứt bỏ", "lừa đảo", "scam", "giả danh bác sĩ", "thịt trâu", "thịt bò tơ", 
-        "mèo con", "chó con", "giết mổ", "đánh đập", "bạo hành", "giết hại", "chặt đầu", "cắt cổ", "máu me",
+        "giết mổ", "đánh đập", "bạo hành", "giết hại", "chặt đầu", "cắt cổ", "máu me",
         "dao phay", "búa", "dây thòng lọng", "bẫy", "bả", "thuốc độc", "bỏ đói", "không cho ăn", "nhốt chuồng", 
         "bỏ mặc", "vứt ra đường", "đa cấp", "lừa tiền", "mạo danh", "hack", "ăn cắp", "chiếm đoạt",
         "hiếp dâm", "bạo lực tình dục", "lạm dụng", "tự tử", "tự hại"
@@ -23,7 +23,7 @@
     "P0_TRADING": {
       "label": "Kinh doanh thú cưng - Chặn & Nhắc nhở",
       "keywords": [
-        "bán chó", "bán mèo", "bán pet", "mua chó", "mua mèo", "giá bao nhiêu", 
+        "bán", "mua", "giá bao nhiêu", 
         "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
         "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
         "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem",
@@ -78,7 +78,8 @@
   "whitelist": [
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
     "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí",
-    "transfer", "cute", "mai", "phomai", "phômai", "home", "mẹ", "bố", "ba", "cha"
+    "transfer", "cute", "mai", "phomai", "phômai", "home", "mẹ", "bố", "ba", "cha",
+    "chó", "mèo", "dog", "cat"
 
 
   ]
