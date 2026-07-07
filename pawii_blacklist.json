@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "updated_at": "2026-07-07T00:00:00Z",
   "config": {
     "case_sensitive": false,
@@ -78,7 +78,7 @@
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
     "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí",
     "transfer", "cute", "mai", "phomai", "phômai", "home", "mẹ", "bố", "ba", "cha",
-    "chó", "mèo", "dog", "cat", "con chó". "con mèo"
+    "chó", "mèo", "dog", "cat", "con chó", "con mèo"
 
 
   ]
