@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updated_at": "2026-07-06T00:00:00Z",
+  "version": 9,
+  "updated_at": "2026-07-07T00:00:00Z",
   "config": {
     "case_sensitive": false,
     "replacement_char": "🐾",
@@ -12,7 +12,7 @@
       "keywords": [
         "thịt", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", "hành hạ", 
         "tra tấn", "kích điện", "xẻ thịt", "thuốc chuột", "bả chó", "xiên", "chọc tiết",
-        "ngược đãi", "bỏ rơi", "vứt bỏ", "lừa đảo", "scam", "giả danh bác sĩ", "thịt trâu", "thịt bò tơ", 
+        "ngược đãi", "bỏ rơi", "vứt bỏ", "thịt trâu", "thịt bò tơ", 
         "giết mổ", "đánh đập", "bạo hành", "giết hại", "chặt đầu", "cắt cổ", "máu me",
         "dao phay", "búa", "dây thòng lọng", "bẫy", "bả", "thuốc độc", "bỏ đói", "không cho ăn", "nhốt chuồng", 
         "bỏ mặc", "vứt ra đường", "đa cấp", "lừa tiền", "mạo danh", "hack", "ăn cắp", "chiếm đoạt",
@@ -23,8 +23,7 @@
     "P0_TRADING": {
       "label": "Kinh doanh thú cưng - Chặn & Nhắc nhở",
       "keywords": [
-        "bán", "mua", "giá bao nhiêu", 
-        "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
+        "bán", "mua", "giá bao nhiêu", "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
         "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
         "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem",
         "k", "củ", "lít", "m", "khoai", "sdt", "fone", "p_h_o_n_e", "za-lo", "zeplao",
@@ -35,7 +34,7 @@
     "P1_TOXIC": {
       "label": "Ngôn từ thiếu văn hóa - Thay thế bằng 🐾",
       "keywords": [
-        "đm", "đmm", "dm", "dmm", "vcl", "vkl", "clm", "cđm", "đéo", "đé0", "con chó",
+        "đm", "đmm", "dm", "dmm", "vcl", "vkl", "clm", "cđm", "đéo", "đé0",
         "ngu", "óc chó", "súc vật", "đồ con lợn", "mất dạy", "khốn nạn", "đĩ", "điếm",
         "xàm", "nhảm nhí", "câm mồm", "vô học", "thằng này", "con này", "vô học",
         "thằng chó", "con đĩ", "địt", "lồn", "buồi", "cặc","địt mẹ", "địt bố", "địt bà",
@@ -79,7 +78,7 @@
     "bạn trai", "bạn gái", "bán đảo", "giá đỗ", "triệu tập", "nghìn trùng", 
     "chó đốm", "mèo máy", "bác sĩ", "cứu trợ", "nhận nuôi", "tặng miễn phí",
     "transfer", "cute", "mai", "phomai", "phômai", "home", "mẹ", "bố", "ba", "cha",
-    "chó", "mèo", "dog", "cat"
+    "chó", "mèo", "dog", "cat", "con chó". "con mèo"
 
 
   ]
