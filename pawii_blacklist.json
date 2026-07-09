@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updated_at": "2026-07-07T00:00:00Z",
+  "version": 11,
+  "updated_at": "2026-07-09T00:00:00Z",
   "config": {
     "case_sensitive": false,
     "replacement_char": "🐾",
@@ -10,13 +10,7 @@
     "P0_CRITICAL": {
       "label": "Vi phạm nghiêm trọng - Chặn & Khóa", 
       "keywords": [
-        "thịt", "cày tơ", "tiểu hổ", "đánh chết", "đập chết", "hành hạ", 
-        "tra tấn", "kích điện", "xẻ thịt", "thuốc chuột", "bả chó", "xiên", "chọc tiết",
-        "ngược đãi", "bỏ rơi", "vứt bỏ", "thịt trâu", "thịt bò tơ", 
-        "giết mổ", "đánh đập", "bạo hành", "giết hại", "chặt đầu", "cắt cổ", "máu me",
-        "dao phay", "búa", "dây thòng lọng", "bẫy", "bả", "thuốc độc", "bỏ đói", "không cho ăn", "nhốt chuồng", 
-        "bỏ mặc", "vứt ra đường", "đa cấp", "lừa tiền", "mạo danh", "hack", "ăn cắp", "chiếm đoạt",
-        "hiếp dâm", "bạo lực tình dục", "lạm dụng", "tự tử", "tự hại"
+        "xẻ thịt", "giết hại"
       ],
       "penalty_points": 100
     },
@@ -34,13 +28,7 @@
     "P1_TOXIC": {
       "label": "Ngôn từ thiếu văn hóa - Thay thế bằng 🐾",
       "keywords": [
-        "đm", "đmm", "dm", "dmm", "vcl", "vkl", "clm", "cđm", "đéo", "đé0",
-        "ngu", "óc chó", "súc vật", "đồ con lợn", "mất dạy", "khốn nạn", "đĩ", "điếm",
-        "xàm", "nhảm nhí", "câm mồm", "vô học", "thằng này", "con này", "vô học",
-        "thằng chó", "con đĩ", "địt", "lồn", "buồi", "cặc","địt mẹ", "địt bố", "địt bà",
-        "bà mẹ", "con cặc", "con kẹt", "con cặt", "cặt", "cc", "đĩ cái", "đĩ đực", 
-        "đĩ cái", "đụ má", "đụ mẹ", "đủy", "đỉ", "cái cặc", "cái thẹp", "bê đê", "lgbt",
-        "bóng"
+      
       ],
       "penalty_points": 10
     },
