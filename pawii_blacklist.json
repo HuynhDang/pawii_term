@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "updated_at": "2026-07-09T00:00:00Z",
   "config": {
     "case_sensitive": false,
@@ -17,11 +17,7 @@
     "P0_TRADING": {
       "label": "Kinh doanh thú cưng - Chặn & Nhắc nhở",
       "keywords": [
-        "bán", "mua", "giá bao nhiêu", "giá nhiêu", "ib giá", "inbox giá", "chuyển khoản", "đặt cọc", "cọc tiền", 
-        "thanh lý", "xả hàng", "giá công khai", "triệu", "tr", "nghìn", "ngàn", "vnđ", "vnd",
-        "liên hệ sđt", "zalo", "phối giống", "bỏ sỉ", "giá rẻ", "ph0i", "ph.ố.i", "shjpxem",
-        "k", "củ", "lít", "m", "khoai", "sdt", "fone", "p_h_o_n_e", "za-lo", "zeplao",
-        "zep-lao"
+        "bán", "mua"
       ],
       "penalty_points": 15
     },
